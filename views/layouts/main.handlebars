@@ -4,31 +4,47 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fund My Project!</title>
-  <link rel="stylesheet" href="/css/jass.css">
+  <title>The Tech Blog</title>
+  <!--<link rel="stylesheet" href="/css/jass.css">-->
   <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
   <div class="flex-column justify-space-around">
-    <header class="display-flex justify-space-between align-center p-2">
-      <h1>
-        <span role="img" aria-label="money">💸</span>
-        <a href="/">Fund My Project!</a>
-      </h1>
-      <nav>
+    <header class="hero display-flex justify-space-between align-center p-2">
+      <nav class="flex-row">
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
-        <a href="/profile">profile</a> |
-        <button class="no-button" id="logout">logout</button>
+        <h2 class="nav-option">
+          <a href="/">Home</a> 
+        </h2>
+        <h2 class="nav-option">
+          <a href="/dashboard">Dashboard</a>
+        </h2>
+        <h2 class="nav-option">
+          <button class="no-button" id="logout">Logout</button>
+        </h2>
         {{else}}
-        <a href="/login">login</a>
+        <h2 class="nav-option">
+          <a href="/">Home</a> 
+        </h2>
+        <h2 class="nav-option">
+          <a href="/dashboard">Dashboard</a>
+        </h2>
+        <h2 class="nav-option">
+          <a href="/login">Login</a>
+        </h2>
         {{/if}}
       </nav>
+      <h1 class="section-title">
+        The Tech Blog
+      </h1>
     </header>
-    <main class="container container-fluid mt-5">
-      <!-- Render the sub layout -->
-      {{{ body }}}
+    <main class="flex-row justify-space-between">
+      <div class="col-12">
+        <!-- Render the sub layout -->
+        {{{ body }}}
+      </div>
     </main>
     <footer>
       

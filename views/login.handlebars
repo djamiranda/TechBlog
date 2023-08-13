@@ -1,41 +1,25 @@
-<div class="row">
-  <div class="col-md-6">
-    <h2>Login</h2>
-
+<div class="card">
+  <!--the header-->
+  <h2 class="card-header">
+    Login
+  </h2>
+  <!--the form-->
+  <div class="card-body">
     <form class="form login-form">
       <div class="form-group">
-        <label for="email-login">email:</label>
-        <input class="form-input" type="text" id="email-login" />
+        <label for="username-login">Username</label>
+        <input name="username-login" id="username-login" type="text" autofocus="true" class="form-input" />
       </div>
       <div class="form-group">
-        <label for="password-login">password:</label>
-        <input class="form-input" type="password" id="password-login" />
+        <label for="password-login">Password</label>
+        <input name="password-login" id="password-login" type="password" class="form-input" />
       </div>
       <div class="form-group">
-        <button class="btn btn-primary" type="submit">login</button>
+        <button type="submit" class="btn">Login!</button>
       </div>
     </form>
-  </div>
-  <div class="col-md-6">
-    <h2>Signup</h2>
-
-    <form class="form signup-form">
-      <div class="form-group">
-        <label for="name-signup">name:</label>
-        <input class="form-input" type="text" id="name-signup" />
-      </div>
-      <div class="form-group">
-        <label for="email-signup">email:</label>
-        <input class="form-input" type="text" id="email-signup" />
-      </div>
-      <div class="form-group">
-        <label for="password-signup">password:</label>
-        <input class="form-input" type="password" id="password-signup" />
-      </div>
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">signup</button>
-      </div>
-    </form>
+    <!--the signup link-->
+    <a href="/signup" id="signup-link">Sign up instead</a>
   </div>
 </div>
 
