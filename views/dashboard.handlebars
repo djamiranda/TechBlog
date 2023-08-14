@@ -1,13 +1,31 @@
 {{#if posts.length}}
-<section>
-  <h2>Your Posts</h2>
-    {{#each posts as |post|}}
-      {{> dashboard-postinfo post}}
-    {{/each}}
-
+{{#each posts as |post|}}
+<section class="dashboard-content">
+    <a href="/posts/{{post.id}}">
+    <div class="db-title">
+        <span>{{post.title}}</span>
+    </div>
+    </a>
+    <div class="db-date">
+        <span>{{format_date post.date_created}}</span>
+    </div>
 </section>
+{{/each}}
 {{/if}}
 
-<button type="submit" class="btn"><a class="link" href="/dashboard/new">+ New Post</a></button>
+<section class="post">
+    <div class="section-header">
+        <h3>Create New Post</h3>
+    </div>
+    <div class="section-body">
+        <form id="new-post-form">
+            <label for="title">Title</label>
+            <input type="text" name="title" id="title">
+            <label for="content">Content</label>
+            <textarea name="content" id="content" cols="30" rows="10"></textarea>
+            <button class="create-post" type="submit">Create</button>
+        </form>
+    </div>
+</section>
 
-<script src="/js/add-post.js"></script>
+<script src="/js/create-post.js"></script>

@@ -1,25 +1,15 @@
-<div class="card">
-  <h3 class="card-header">Login</h3>
-  <form id="login-form" class="card-body">
-    <label class="form-label" for="username-login">Username</label>
-    <input
-      id="username-login"
-      type="text"
-      autofocus="true"
-      class="form-input"
-    />
-
-    <label class="form-label" for="password-login">Password</label>
-    <input
-      id="password-login"
-      type="password"
-      autofocus="true"
-      class="form-input"
-    />
-
-    <button type="submit" class="btn">Click here to login</button>
-    <a class="login-link" href="/signup">Sign Up Here</a>
-  </form>
-</div>
+<section class="login">
+            <div class="section-header">
+                <h3>Login</h3>
+            </div>
+            <div class="section-body">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" id="username">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password">
+                    <button id="login">Login</button>
+                    <label for="signup"><a href="/signup">Sign up instead</a></label>
+            </div>
+        </section>
 
 <script src="/js/login.js"></script>

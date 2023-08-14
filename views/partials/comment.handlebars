@@ -1,0 +1,23 @@
+<section class="posted-comment">
+    <div class="section-header">
+        <h3>Comments</h3>
+    </div>
+    {{#each this}}
+    <div class="section-body">
+        <p>{{text}}</p>
+        <p>– {{user.username}}, {{format_date post.date_created}}</p>
+    </div>
+    {{/each}}
+</section>
+
+<section class="comment">
+    <div class="section-header"></div>
+    <div class="section-body">
+        {{post.title}}
+        <form class="comment-form" action="/comment" method="POST">
+            <label for="comment">Comment</label>
+            <textarea name="comment-body" id="comment" cols="30" rows="10"></textarea>
+            <button class="login" type="submit">Submit</button>
+        </form>
+    </div>
+</section>

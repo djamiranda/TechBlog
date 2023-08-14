@@ -1,0 +1,71 @@
+<section class="post">
+    <div class="post-header">
+        <div class="post-headline">
+            {{!-- <h3><a href="/comment/{{post.id}}" id="comment">{{post.title}}</a></h3> --}}
+            <h3>{{post.title}}</h3>
+        </div>
+        <div class="post-user-date">
+            <h4>Posted by {{post.user.username}} on {{format_date post.createdAt}}</h4>
+        </div>
+    </div>
+    <p>{{post.contents}}</p>
+</section>
+
+<section class="posted-comment">
+    <div class="section-header">
+        {{#if loggedIn}}
+        <h3>(Update / Delete) Comments</h3>
+        {{else}}
+        <h3>Comments</h3>
+        {{/if}}
+    </div>
+    {{#if loggedIn}}
+        {{#each post.comments as |comment|}}
+        <div class="section-body">
+            <p><a href="/edit-comment/{{comment.id}}">{{comment.text}}</a></p>
+            <p>– {{user.username}}, {{format_date comment.createdAt}}</p>
+        </div>
+        {{/each}}
+        {{#unless post.comments}}
+        <div class="section-body">
+            <p>Be the first to comment!</p>
+        </div>
+        {{/unless}}
+    {{else}}
+        {{#each post.comments as |comment|}}
+        <div class="section-body">
+            <p>{{comment.text}}</p>
+            <p>– {{user.username}}, {{format_date comment.createdAt}}</p>
+        </div>
+        {{/each}}
+        {{#unless post.comments}}
+        <div class="section-body">
+            <p>Be the first to comment!</p>
+        </div>
+        {{/unless}}
+    {{/if}}
+</section>
+
+<section class="comment">
+    {{#if loggedIn}}
+    <div class="section-header">
+        <h3>Submit a Comment</h3>
+    </div>
+    <div class="section-body">
+        <form class="comment-form">
+            {{!-- <label for="comment"><b>Comment</b></label> --}}
+            <textarea name="comment-body" id="comment" cols="30" rows="10"></textarea>
+            <button class="login" type="submit">Submit</button>
+        </form>
+        {{else}}
+        <div class="section-header">
+            <h3>Login to Comment</h3>
+        </div>
+        <div class="section-body">
+            <p>Please <a href="/login/">login</a> to create, update, or delete comments.</p>
+        </div>
+        {{/if}}
+    </div>
+</section>
+
+<script src="/js/comment.js"></script>
