@@ -4,57 +4,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Tech Blog</title>
-  <!--<link rel="stylesheet" href="/css/jass.css">-->
+  <title>Tech Blog</title>
   <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
-  <div class="flex-column justify-space-around">
-    <header class="hero display-flex justify-space-between align-center p-2">
-      <nav class="flex-row">
-        <!-- Conditionally render login or logout links -->
-        {{#if logged_in}}
-        <h2 class="nav-option">
-          <a href="/">Home</a> 
-        </h2>
-        <h2 class="nav-option">
-          <a href="/dashboard">Dashboard</a>
-        </h2>
-        <h2 class="nav-option">
-          <button class="no-button" id="logout">Logout</button>
-        </h2>
-        {{else}}
-        <h2 class="nav-option">
-          <a href="/">Home</a> 
-        </h2>
-        <h2 class="nav-option">
-          <a href="/dashboard">Dashboard</a>
-        </h2>
-        <h2 class="nav-option">
-          <a href="/login">Login</a>
-        </h2>
-        {{/if}}
-      </nav>
-      <h1 class="section-title">
-        The Tech Blog
-      </h1>
-    </header>
-    <main class="flex-row justify-space-between">
-      <div class="col-12">
-        <!-- Render the sub layout -->
-        {{{ body }}}
+  <div class="wrapper">
+    <header class="hero">
+      <div>
+        <nav class"nav">
+          <a class="link" href="/">Home</a>
+          <a class="link" href="/dashboard">Dashboard</a>
+          {{#if loggedIn}}
+          <a class="link" href="/" id="logout">Logout</a>
+          {{else}}
+          <a class="link" href="/login">Login</a>
+          {{/if}}
+        </nav>
       </div>
+
+      <h1 class="app-title"><i class="fab "></i>The Tech Blog</h1>
+    </header>
+
+    <main>
+      {{{ body }}}
     </main>
-    <footer>
-      
-    </footer>
   </div>
 
-  <!-- Render script for logged in users only -->
-  {{#if logged_in}}
-  <script src="/js/logout.js"></script>
+  {{#if loggedIn}}
+  <script src="/javascript/logout.js"></script>
   {{/if}}
+
 </body>
 
 </html>
