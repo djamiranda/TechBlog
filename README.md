@@ -22,5 +22,5 @@
   [https://github.com/djamiranda/TechBlog](https://github.com/djamiranda/TechBlog)
 
   Heroku:
-  [https://powerful-lowlands-50264-56ffc0e6dd94.herokuapp.com/](https://powerful-lowlands-50264-56ffc0e6dd94.herokuapp.com/)
+  []()
 
