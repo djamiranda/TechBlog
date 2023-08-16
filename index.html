@@ -5,8 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Reset and style CSS links -->
     <link rel="stylesheet" href="./public/css/reset.css">
     <link rel="stylesheet" href="./public/css/style.css">
+    <!-- Google Fonts and Font Awesome icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>The Tech Blog</title>
@@ -14,7 +16,7 @@
 
 <body>
     <header>
-        <!-- NAV -->
+        <!-- Navigation section -->
         <nav>
             <a href="/">
                 <h2>Home</h2>
@@ -29,12 +31,13 @@
                 <h2>Logout</h2>
             </a>
         </nav>
+        <!-- Site title -->
         <div id="masthead">
             <h1>The Tech Blog</h1>
         </div>  
     </header>
     <main>
-        <!-- POSTS -->
+        <!-- Individual post sections -->
         <section class="post">
             <div class="post-header">
                 <div class="post-headline">
@@ -59,34 +62,39 @@
             <p>There is a difference between authentication and authorization. Authentication means confirming your own
                 identity, whereas authorization means being allowed access to the system.</p>
         </section>
-        <!-- LOGIN -->
+        <!-- Login section -->
         <section class="login">
             <div class="section-header">
                 <h3>Login</h3>
             </div>
             <div class="section-body">
+                <!-- Login form -->
                 <form action="/user" method="POST">
                     <label for="username">Username</label>
                     <input type="text" name="username" id="username">
                     <label for="password">Password</label>
                     <input type="password" name="password" id="password">
+                    <!-- Login button -->
                     <button type="submit">Login</button>
+                    <!-- Link to sign-up page -->
                     <label for="signup"><a href="/signup">Sign up instead</a></label>
                 </form>
             </div>
         </section>
-        <!-- COMMENT FIELD -->
+        <!-- Comment field -->
         <section class="comment">
             <div class="section-header"></div>
             <div class="section-body">
+                <!-- Comment form -->
                 <form action="/comment" method="POST">
                     <label for="comment">Comment</label>
                     <textarea name="comment" id="comment" cols="30" rows="10"></textarea>
+                    <!-- Comment submission button -->
                     <button class="login" type="submit">Submit</button>
                 </form>
             </div>
         </section>
-        <!-- POSTED COMMENT -->
+        <!-- Posted comment section -->
         <section class="posted-comment">
             <div class="section-header">
                 <h3>Comments</h3>
@@ -96,42 +104,47 @@
                 <p>– USER, DATE</p>
             </div>
         </section>
-        <!-- NEW POST -->
+        <!-- Create new post section -->
         <section class="post">
             <div class="section-header">
                 <h3>Create New Post</h3>
             </div>
             <div class="section-body">
+                <!-- New post form -->
                 <form action="/post" method="POST">
                     <label for="title">Title</label>
                     <input type="text" name="title" id="title">
                     <label for="content">Content</label>
                     <textarea name="content" id="content" cols="30" rows="10"></textarea>
+                    <!-- Create post button -->
                     <button class="create-post" type="submit">Create</button>
                 </form>
             </div>
         </section>
-        <!-- EDIT POST -->
+        <!-- Edit post section -->
         <section class="post">
             <div class="section-header">
                 <h3>Edit Post</h3>
             </div>
             <div class="section-body">
+                <!-- Edit post form -->
                 <form action="/post" method="POST">
                     <label for="title">Title</label>
                     <input type="text" name="title" id="title">
                     <label for="content">Content</label>
                     <textarea name="content" id="content" cols="30" rows="10"></textarea>
+                    <!-- Update post button -->
                     <button class="edit-post" type="submit">Update Post</button>
+                    <!-- Delete post button -->
                     <button class="edit-post" type="submit">Delete</button>
                 </form>
             </div>
         </section>
-        <!-- NEW POST BUTTON -->
+        <!-- New post button -->
         <div class="new-post">
             <button id="new-post" type="button">+ New Post</button>
         </div>
-        <!-- DASHBOARD CONTENT-->
+        <!-- Dashboard content section -->
         <section class="dashboard-content">
             <div class="db-title">
                 <span>TITLE</span>
