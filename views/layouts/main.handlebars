@@ -4,16 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Reset and custom CSS stylesheets -->
     <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="/css/style.css">
+    <!-- Link to Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- Link to Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
         integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Title of the webpage -->
     <title>The Tech Blog</title>
 </head>
 <body>
+    <!-- Header section -->
     <header>
+        <!-- Navigation menu links -->
         <nav>
             <a href="/">
                 <h2>Home</h2>
@@ -22,25 +28,31 @@
                 <h2>Dashboard</h2>
             </a>
             {{#if loggedIn}}
+            <!-- Display logout link if user is logged in -->
             <a href="/logout">
                 <h2 id="logout">Logout</h2>
             </a>
             {{else}}
+            <!-- Display login link if user is not logged in -->
             <a href="/login">
                 <h2>Login</h2>
             </a>
             {{/if}}
         </nav>
+        <!-- Masthead with site title -->
         <div id="masthead">
             <a href="/"><h1>The Tech Blog</h1></a>
         </div>
     </header>
+    <!-- Main content area -->
     <main>
         {{{body}}}
     </main>
+    <!-- Footer section -->
     <footer>
     </footer>
     {{#if loggedIn}}
+    <!-- Include logout js file if user is logged in -->
     <script src="/js/logout.js"></script>
     {{/if}}
 </body>

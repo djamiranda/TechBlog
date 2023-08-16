@@ -1,16 +1,25 @@
+<!-- Section for updating or deleting a comment -->
 <section class="comment">
+    <!-- Section header for update and delete options -->
     <div class="section-header">
         <h3>Update / Delete Comment</h3>
     </div>
     <div class="section-body">
+        <!-- Form for updating the comment -->
         <form id="edit-comment-form">
-        <label for="title"></label>
-        <input type="text" value="{{comment.text}}" name="title" id="title">
-        <p style="margin-left:24px;">– {{comment.user.username}}, {{format_date comment.createdAt}}</p>
-        <button class="edit-comment" data-id="{{comment.id}}" id="update">Update Comment</button>
+            <!-- Hidden input to hold the comment's ID -->
+            <input type="hidden" value="{{comment.id}}" name="comment-id">
+            <!-- Input field to edit the comment text -->
+            <input type="text" value="{{comment.text}}" name="title" id="title">
+            <!-- Display comment author and creation date -->
+            <p style="margin-left: 24px;">– {{comment.user.username}}, {{format_date comment.createdAt}}</p>
+            <!-- Button to update the comment -->
+            <button class="edit-comment" data-id="{{comment.id}}" id="update">Update Comment</button>
         </form>
+        <!-- Button to delete the comment -->
         <button class="edit-comment" data-id="{{comment.id}}" id="delete">Delete Comment</button>
     </div>
 </section>
 
+<!-- JS file for updating and deleting comments -->
 <script src="/js/edit-comment.js"></script>

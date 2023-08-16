@@ -1,17 +1,26 @@
+<!-- Display section for a single post -->
 <section class="post">
+    <!-- Post header containing headline and user/date info -->
     <div class="post-header">
+        <!-- Division for post headline -->
         <div class="post-headline">
-            {{!-- <h3><a href="/comment/{{post.id}}" id="comment">{{post.title}}</a></h3> --}}
+            {{!-- Commented out previous code for comment link --}}
+            {{!-- Display the title of the post --}}
             <h3>{{post.title}}</h3>
         </div>
+        <!-- Division for post author and creation date -->
         <div class="post-user-date">
+            <!-- Display the username of the post author and the date of post creation -->
             <h4>Posted by {{post.user.username}} on {{format_date post.createdAt}}</h4>
         </div>
     </div>
+    <!-- Display the contents of the post -->
     <p>{{post.contents}}</p>
 </section>
 
+<!-- Display section for posted comments -->
 <section class="posted-comment">
+    <!-- Section header based on users login status -->
     <div class="section-header">
         {{#if loggedIn}}
         <h3>(Update / Delete) Comments</h3>
@@ -19,9 +28,11 @@
         <h3>Comments</h3>
         {{/if}}
     </div>
+    <!-- Check users login status to display appropriate comments or login prompt -->
     {{#if loggedIn}}
         {{#each post.comments as |comment|}}
         <div class="section-body">
+            <!-- Display comment text and its author -->
             <p><a href="/edit-comment/{{comment.id}}">{{comment.text}}</a></p>
             <p>– {{user.username}}, {{format_date comment.createdAt}}</p>
         </div>
@@ -34,6 +45,7 @@
     {{else}}
         {{#each post.comments as |comment|}}
         <div class="section-body">
+            <!-- Display comment text and its author -->
             <p>{{comment.text}}</p>
             <p>– {{user.username}}, {{format_date comment.createdAt}}</p>
         </div>
@@ -46,26 +58,33 @@
     {{/if}}
 </section>
 
+<!-- Display section for commenting -->
 <section class="comment">
     {{#if loggedIn}}
+    <!-- Section header for commenting -->
     <div class="section-header">
         <h3>Submit a Comment</h3>
     </div>
     <div class="section-body">
+        <!-- Comment submission form -->
         <form class="comment-form">
-            {{!-- <label for="comment"><b>Comment</b></label> --}}
+            {{!-- Comment input area --}}
             <textarea name="comment-body" id="comment" cols="30" rows="10"></textarea>
+            <!-- Comment submission button -->
             <button class="login" type="submit">Submit</button>
         </form>
         {{else}}
+        <!-- Section header for login prompt -->
         <div class="section-header">
             <h3>Login to Comment</h3>
         </div>
         <div class="section-body">
+            <!-- Login prompt message with link -->
             <p>Please <a href="/login/">login</a> to create, update, or delete comments.</p>
         </div>
         {{/if}}
     </div>
 </section>
 
+<!-- js to handle comments -->
 <script src="/js/comment.js"></script>

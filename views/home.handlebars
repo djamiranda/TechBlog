@@ -1,13 +1,18 @@
+<!-- Loop through each post and display their information -->
 {{#each posts as |post| }}
 <section class="post">
+    <!-- Post header containing the post's title and user/date information -->
     <div class="post-header">
         <div class="post-headline">
-            <h3><a href="/comment/{{post.id}}" id="comment">{{post.title}}</a></h2>
+            <!-- Link to the post's comment section with the post's title -->
+            <h3><a href="/comment/{{post.id}}" id="comment">{{post.title}}</a></h3>
         </div>
         <div class="post-user-date">
-            <h4>Posted by {{post.user.username}} on {{format_date post.date_created}}</h3>
+            <!-- Display the user who posted the post and its creation date -->
+            <h4>Posted by {{post.user.username}} on {{format_date post.date_created}}</h4>
         </div>
     </div>
+    <!-- Display the contents of the post -->
     <p>{{post.contents}}</p>
 </section>
 {{/each}}

@@ -1,17 +1,25 @@
+<!-- Section for editing or deleting a post -->
 <section class="post">
+    <!-- Section header for editing and deleting options -->
     <div class="section-header">
         <h3>Edit Post</h3>
     </div>
     <div class="section-body">
-        <form id ="edit-post-form">
-            <label for="title"></label>
+        <!-- Form for editing the post -->
+        <form id="edit-post-form">
+            <!-- Hidden input to hold the post's ID -->
+            <input type="hidden" value="{{post.id}}" name="post-id">
+            <!-- Input field to edit the post title -->
             <input type="text" value="{{post.title}}" name="title" id="title">
-            <label for="content"></label>
+            <!-- Input field to edit the post content -->
             <textarea name="content" id="content" cols="30" rows="10">{{post.contents}}</textarea>
+            <!-- Button to update the post -->
             <button class="edit-post" type="submit">Update Post</button>
         </form>
+        <!-- Button to delete the post -->
         <button class="edit-post" id="delete">Delete Post</button>
     </div>
 </section>
 
+<!-- JS file for editing and deleting posts -->
 <script src="/js/edit-post.js"></script>
