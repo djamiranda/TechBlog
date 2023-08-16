@@ -1,11 +1,17 @@
+/* Apply consistent box sizing and font size to the entire document */
+
 html {
     box-sizing: border-box;
     font-size: 16px;
 }
 
-  *, *:before, *:after {
+/* Inherit box-sizing for all elements and their pseudo-elements */
+
+*, *:before, *:after {
     box-sizing: inherit;
 }
+
+/* Normalize default styles for common HTML elements */
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -20,31 +26,44 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
+    /* Reset margins, padding, and borders */
 	margin: 0;
 	padding: 0;
 	border: 0;
+    /* Reset font size and font to inherit from the parent */
 	font-size: 100%;
 	font: inherit;
+    /* Reset vertical alignment */
 	vertical-align: baseline;
 }
+
+/* Reset display for semantic HTML5 elements */
 
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 
+/* Reset margins and padding for headings and paragraphs */
+
 h1, h2, h3, h4, h5, h6, p, ol, ul {
     margin: 0;
     padding: 0;
 }
 
+/* Reset list style for ordered and unordered lists */
+
 ol, ul {
 	list-style: none;
 }
 
+/* Reset quotes for blockquote and q elements */
+
 blockquote, q {
 	quotes: none;
 }
+
+/* Reset quotes for before and after pseudo-elements of blockquote and q */
 
 blockquote:before, blockquote:after,
 q:before, q:after {
@@ -52,10 +71,14 @@ q:before, q:after {
 	content: none;
 }
 
+/* Set images to scale within their parent containers */
+
 img {
     max-width: 100%;
     height: auto;
 }
+
+/* Reset table styles */
 
 table {
 	border-collapse: collapse;

@@ -1,4 +1,4 @@
-/* Colors */
+/* Define color variables */
 
 :root {
     --mint: #dde9d5;
@@ -8,7 +8,7 @@
     --white: #ffffff;
 }
 
-/* Top level */
+/* Top level styles */
 
 html {
     height: 100%;
@@ -30,7 +30,7 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Headings */
+/* Heading styles */
 
 h1 {
     font-size: 36px;
@@ -41,8 +41,6 @@ h1 {
     color: var(--brown);
     background-color: var(--mint);
     border-radius: 5px;
-    -webkit-box-shadow: 7.5px 7.5px 0px 0px rgba(167, 167, 167, 1);
-    -moz-box-shadow: 7.5px 7.5px 0px 0px rgba(167, 167, 167, 1);
     box-shadow: 7.5px 7.5px 0px 0px rgba(167, 167, 167, 1);
 }
 
@@ -63,17 +61,16 @@ h4 {
     color: var(--mint);
 }
 
-/* Paragraph */
+/* Paragraph styles */
 
 p {
     font-size: 18px;
     font-weight: normal;
     padding: 15px;
     color: var(--brown);
-    /* background-color: var(--white); */
 }
 
-/* Header, nav, and masthead */
+/* Header, nav, and masthead styles */
 
 header {
     background-color: var(--brown);
@@ -100,14 +97,13 @@ nav a:hover, h1:hover {
     color: var(--gray);
 }
 
-
 #masthead {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
 }
 
-/* Main sections */
+/* Main section styles */
 
 main {
     display: flex;
@@ -137,7 +133,7 @@ section {
     margin: 10px 0;
 }
 
-/* Posts */
+/* Post styles */
 
 .post {
     width: 95%;
@@ -165,7 +161,7 @@ section {
     text-align: right;
 }
 
-/* Forms & buttons*/
+/* Form and button styles */
 
 input[type="text"],
 input[type="content"],
@@ -218,7 +214,7 @@ button {
     background-color: var(--gray);
 }
 
-/* Posts */
+/* New post button style */
 
 .new-post button {
     background-color: var(--brown);
@@ -227,6 +223,8 @@ button {
     border-radius: 5px;
     font-size: 22px;
 }
+
+/* Comment and post textarea styles */
 
 .comment textarea,
 .post textarea {
@@ -243,18 +241,7 @@ button {
     border: none;
 }
 
-.post input,
-select,
-textarea,
-button {
-    display: block;
-    width: 95%;
-    margin: 10px auto;
-    height: 45px;
-    border: none;
-}
-
-/* Dashboard */
+/* Dashboard styles */
 
 .dashboard-content {
     display: flex;
@@ -295,7 +282,7 @@ button {
     text-align: right;
 }
 
-/* Media queries */
+/* Media queries for smaller screens */
 
 @media (max-width: 600px) {
     .post-headline {
